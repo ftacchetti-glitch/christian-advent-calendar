@@ -4,13 +4,24 @@ body {
 	background: linear-gradient(to bottom, #5eaed7 0%, #1e528e 100%);
 	display: flex;
 	font-family: "Pacifico", cursive;
+	text-align: center;
+	justify-content: center;
 }
 h1 {
 	color: white;
 }
 .wrapper {
-  width: 400px;
-  margin: 20px auto;
+  width: 500px;
+  margin: 50px 50px 50px;
+  border-radius: 41px;
+  box-shadow:  7px 7px 15px #cecece,
+             -7px -7px 15px #f2f2f2;
+}
+.wrapper img {
+    width: 100%; /* Make the image fill the wrapper */
+    height: auto; /* Maintain the aspect ratio */
+	border-radius: 41px;
+    display: block; /* Remove any extra space below the image */
 }
 .title {
   font-size: 1.5rem;
