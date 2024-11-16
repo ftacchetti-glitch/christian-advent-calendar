@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
 body {
-  background: radial-gradient(#cee4c5 0%, #c4feab 100%);;
-  font-family: sans-serif;
+	background: linear-gradient(to bottom, #5eaed7 0%, #1e528e 100%);
+	display: flex;
+	font-family: "Pacifico", cursive;
+}
+h1 {
+	color: white;
 }
 .wrapper {
   width: 400px;
@@ -41,4 +47,46 @@ ul#adventDoors {
 	background-color: rgba(196,254,171,0.15);
 	color: #b6fe98;
 	cursor: default;
+}
+@keyframes fall {
+	0% {
+	  opacity: 0;
+	}
+	50% {
+	  opacity: 1;
+	}
+	100% {
+	  top: 100vh;
+	  opacity: 1;
+	}
+}
+  @keyframes sway {
+	0% {
+	  margin-left: 0;
+	}
+	25% {
+	  margin-left: 50px;
+	}
+	50% {
+	  margin-left: -50px;
+	}
+	75% {
+	  margin-left: 50px;
+	}
+	100% {
+	  margin-left: 0;
+	}
+}
+#snow-container {  
+	height: 100vh;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	transition: opacity 500ms;
+	width: 100%;
+}
+.snow {
+	animation: fall ease-in infinite, sway ease-in-out infinite;
+	color: skyblue;
+	position: absolute;
 }
