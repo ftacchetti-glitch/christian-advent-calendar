@@ -1,18 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Importante per il layout verticale */
+}
 body {
 	background: linear-gradient(to bottom, #5eaed7 0%, #1e528e 100%);
 	display: flex;
+	flex-direction: column; 
 	font-family: "Pacifico", cursive;
-	text-align: center;
-	justify-content: center;
+	height: 100vh; /* Imposta l'altezza del body a tutta la finestra */
+    margin: 0; /* Rimuove i margini di default */
+	text-align: center; 
+	justify-content: center; /* Centra verticalmente */
+	align-content: center; /* Centra orizzontalmente */
 }
 h1 {
+	font-size: 2.5rem;
 	color: white;
+	margin: 20px 0; /* Aggiunge un po' di spazio sopra e sotto */
 }
 .wrapper {
+  /*background: radial-gradient(#22821a 0%, #185a12 100%);*/
   width: 500px;
-  margin: 50px 50px 50px;
+  /*margin: 100px auto 100px;*/
+  margin: 20px auto; /* Aggiunge spazio tra i contenuti */
   border-radius: 41px;
   box-shadow:  7px 7px 15px #cecece,
              -7px -7px 15px #f2f2f2;
@@ -54,9 +67,9 @@ ul#adventDoors {
 	background-color: rgba(255,255,255,0.15);
 }
 #adventDoors li a.disabled {
-	border-color: #b6fe98;
+	border-color: #5eaed7;
 	background-color: rgba(196,254,171,0.15);
-	color: #b6fe98;
+	color: #5eaed7;
 	cursor: default;
 }
 @keyframes fall {
@@ -98,6 +111,6 @@ ul#adventDoors {
 }
 .snow {
 	animation: fall ease-in infinite, sway ease-in-out infinite;
-	color: skyblue;
+	color: rgb(159, 214, 236);
 	position: absolute;
 }
