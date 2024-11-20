@@ -19,6 +19,7 @@ body {
 h1 {
 	font-size: 2.5rem;
 	color: white;
+	text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
 	margin: 20px 0; /* Aggiunge un po' di spazio sopra e sotto */
 }
 .wrapper {
@@ -53,6 +54,7 @@ ul#adventDoors {
 	color: #fff;
 	width: 100%;
 	height: 100%;
+	border-radius: 20px;
 	font-size: 24px;
 	text-align: center;
 	display: flex;
@@ -60,6 +62,7 @@ ul#adventDoors {
 	justify-content: center;
 	text-decoration: none;
 	border: 1px #fff solid;
+	text-shadow: -0.5px 0 #000000, 0 0.5px #000000, 0.5px 0 #000000, 0 -0.5px #000000;
 }
 #adventDoors li a:not(.disabled):hover {
 	color: #fff;
@@ -68,10 +71,11 @@ ul#adventDoors {
 }
 #adventDoors li a.disabled {
 	border-color: #5eaed7;
-	background-color: rgba(196,254,171,0.15);
+	background-color: rgba(255,255,255,0.15);
 	color: #5eaed7;
 	cursor: default;
 }
+/*Animazione neve*/
 @keyframes fall {
 	0% {
 	  opacity: 0;
@@ -113,4 +117,49 @@ ul#adventDoors {
 	animation: fall ease-in infinite, sway ease-in-out infinite;
 	color: rgb(159, 214, 236);
 	position: absolute;
+}
+/*Definizione pop up*/
+#popup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+	margin: 0;
+    background: rgba(0, 0, 0, 0.5); /* Sfondo scuro trasparente */
+    z-index: 1000;
+    opacity: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    pointer-events: none; /* Rende l'elemento non cliccabile */
+    transition: opacity 1s ease; /* Animazione di apparizione */
+}
+#popup-content {
+	color: white;
+}
+/* Mostra il popup */
+#popup.show {
+    opacity: 1;
+    pointer-events: auto; /* Rende l'elemento cliccabile */
+}
+
+/* Bottone di chiusura */
+#popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Animazione di scalatura */
+@keyframes popup-scale {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
