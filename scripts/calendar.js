@@ -21,7 +21,7 @@ function Door(calendar, day) {
 		innerNode.innerHTML = day;
 		innerNode.href = "#";
 
-		if( ( currentDate.getMonth() + 1 ) < 12 || currentDate.getDate() < day ) {
+		if( ( currentDate.getMonth() + 1 ) < 11 || currentDate.getDate() < day ) {
 			innerNode.className = "disabled";
 			innerNode.onclick = function() {
 				return false;
@@ -29,7 +29,7 @@ function Door(calendar, day) {
 		} else {
 			var adventMessage = this.adventMessage;
 			innerNode.onclick = function() {
-				alert(adventMessage);
+				showPopup(adventMessage);
 				return false;
 			}
 		}	
@@ -49,3 +49,19 @@ function Door(calendar, day) {
 
 	return doors;
 })();
+
+// Funzione per mostrare il popup
+function showPopup(message) {
+    popup.textContent = message; // Imposta il messaggio nel popup
+    popup.classList.add("show"); // Mostra il popup
+}
+
+// Funzione per nascondere il popup
+popupClose.onclick = function() {
+    popup.classList.remove("show"); // Nasconde il popup
+};
+popup.onclick = function(event) {
+    if (event.target === popup) {
+        popup.classList.remove("show"); // Nasconde il popup se clicchi fuori dal contenuto
+    }
+};
