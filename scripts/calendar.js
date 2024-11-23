@@ -5,9 +5,16 @@ function Door(calendar, day) {
 
 	this.width = ((calendar.width - 0.1 * calendar.width) / 4) * 0.95;
 	this.height = ((calendar.height - 0.1 * calendar.height) / 6) * 0.95;
-	this.adventMessage = 'Day ' + day + ' of Advent\n\n' + '"' + messages[day - 1][0] + '"\n\n\t' + 'by ' + messages[day - 1][1] + '\n\n';
 	this.x = ( 0.04 * calendar.width + ((day- 1) % 4) * (1.1 * this.width) );
 	this.y = - ( 0.96 * calendar.height - Math.floor((day - 1) / 4) * (1.1 * this.height) );
+    // Ottieni il messaggio del giorno e salva la stringa HTML giusta per il formato
+	let message = messages[day - 1];
+
+	if (message.type === "text") {
+		this.adventMessage =`<h1>Day ${day} of Advent</h1> <p>"${message.content}"<br><br> by ${message.author}</p>`;
+	} else if (message.type === "image") {
+		this.adventMessage = `<h1>Day ${day} of Advent</h1> <img src="${message.content}" alt="${message.description}" style="max-width:100%;"><p>${message.description}</p>`;
+	}
 
 	this.content = function() { 
 		
@@ -53,7 +60,10 @@ function Door(calendar, day) {
 function showPopup(message) {
     const popup = document.getElementById("popup");
     const popupMessage = popup.querySelector(".popup-content");
-    popupMessage.textContent = message; // Imposta il contenuto del messaggio
+
+    // Usa innerHTML per permettere immagini o HTML personalizzato
+    popupMessage.innerHTML = message;
+
     popup.classList.add("show"); // Mostra il popup aggiungendo la classe `show`
 }
 
