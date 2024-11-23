@@ -23,9 +23,7 @@ h1 {
 	margin: 20px 0; /* Aggiunge un po' di spazio sopra e sotto */
 }
 .wrapper {
-  /*background: radial-gradient(#22821a 0%, #185a12 100%);*/
   width: 500px;
-  /*margin: 100px auto 100px;*/
   margin: 20px auto; /* Aggiunge spazio tra i contenuti */
   border-radius: 41px;
   box-shadow:  7px 7px 15px #cecece,
@@ -119,7 +117,7 @@ ul#adventDoors {
 	position: absolute;
 }
 /*Definizione pop up*/
-#popup {
+.popup {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -134,24 +132,41 @@ ul#adventDoors {
     pointer-events: none; /* Rende l'elemento non cliccabile */
     transition: opacity 1s ease; /* Animazione di apparizione */
 }
-#popup-content {
-	color: white;
-}
-/* Mostra il popup */
-#popup.show {
+/* Mostra il popup e definisce i parametri del contenuto*/
+.popup.show {
     opacity: 1;
     pointer-events: auto; /* Rende l'elemento cliccabile */
 }
-
+.popup .popup-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	padding: 20px;
+	width: 450px;
+	background: #f5f5f5;
+	border-radius: 10px; 
+	font-size: 24px;
+}
 /* Bottone di chiusura */
-#popup-close {
+/*.popup .popup-content .close {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 24px;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 50%;
+    background: #c4c3c3;
+    color: #111;
+	font-size: 20px;
+	font-weight: 600;
     cursor: pointer;
-}
-
+}*/
+/*Hover sul bottone di chiusura*/
+/*.popup .popup-content .close:hover {
+    background: #555;
+}*/
 /* Animazione di scalatura */
 @keyframes popup-scale {
     from {

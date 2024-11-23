@@ -50,18 +50,27 @@ function Door(calendar, day) {
 	return doors;
 })();
 
-// Funzione per mostrare il popup
 function showPopup(message) {
-    popup.textContent = message; // Imposta il messaggio nel popup
-    popup.classList.add("show"); // Mostra il popup
+    const popup = document.getElementById("popup");
+    const popupMessage = popup.querySelector(".popup-content");
+    popupMessage.textContent = message; // Imposta il contenuto del messaggio
+    popup.classList.add("show"); // Mostra il popup aggiungendo la classe `show`
 }
 
-// Funzione per nascondere il popup
-popupClose.onclick = function() {
-    popup.classList.remove("show"); // Nasconde il popup
-};
-popup.onclick = function(event) {
-    if (event.target === popup) {
-        popup.classList.remove("show"); // Nasconde il popup se clicchi fuori dal contenuto
-    }
-};
+document.addEventListener("DOMContentLoaded", function () {
+    const popup = document.getElementById("popup");
+	/*const popupContent =popup.querySelector(".popup-content");
+    const closeButton = popupContent.querySelector(".close");
+
+    // Funzione per nascondere il popup al clic sul pulsante di chiusura
+    closeButton.onclick = function () {
+        popup.classList.remove("show");
+    };*/
+
+    // Funzione per chiudere il popup se si clicca all'esterno del contenuto
+    popup.onclick = function (event) {
+        if (event.target === popup) { // Se si clicca sull'overlay
+            popup.classList.remove("show");
+        }
+    };
+});
