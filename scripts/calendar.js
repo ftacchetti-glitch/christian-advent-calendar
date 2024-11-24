@@ -11,7 +11,7 @@ function Door(calendar, day) {
 	let message = messages[day - 1];
 
 	if (message.type === "text") {
-		this.adventMessage =`<h1>Day ${day} of Advent</h1> <p>"${message.content}"<br><br> by ${message.author}</p>`;
+		this.adventMessage =`<h1>Day ${day} of Advent</h1> <p>"${message.content}"<br><br> by ${message.reference}</p>`;
 	} else if (message.type === "image") {
 		this.adventMessage = `<h1>Day ${day} of Advent</h1> <img src="${message.content}" alt="${message.description}" style="max-width:100%;"><p>${message.description}</p>`;
 	}
