@@ -7,7 +7,7 @@ function Door(calendar, day) {
 	this.height = ((calendar.height - 0.1 * calendar.height) / 6) * 0.95;
 	this.x = ( 0.04 * calendar.width + ((day- 1) % 4) * (1.1 * this.width) );
 	this.y = - ( 0.96 * calendar.height - Math.floor((day - 1) / 4) * (1.1 * this.height) );
-    // Ottieni il messaggio del giorno e salva la stringa HTML giusta per il formato
+    // Obtain the daily message and save the correct HTML string given its format
 	let message = messages[day - 1];
 
 	if (message.type === "text") {
@@ -61,10 +61,10 @@ function showPopup(message) {
     const popup = document.getElementById("popup");
     const popupMessage = popup.querySelector(".popup-content");
 
-    // Usa innerHTML per permettere immagini o HTML personalizzato
+    // Use innerHTML add a personalized HTML element
     popupMessage.innerHTML = message;
 
-    popup.classList.add("show"); // Mostra il popup aggiungendo la classe `show`
+    popup.classList.add("show"); // Shows the popup adding the `show` class
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -72,14 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
 	/*const popupContent =popup.querySelector(".popup-content");
     const closeButton = popupContent.querySelector(".close");
 
-    // Funzione per nascondere il popup al clic sul pulsante di chiusura
+    // Function to hide the popup when you click on the close button
     closeButton.onclick = function () {
         popup.classList.remove("show");
     };*/
 
-    // Funzione per chiudere il popup se si clicca all'esterno del contenuto
+    // Function to hide the popup when you click outside the content
     popup.onclick = function (event) {
-        if (event.target === popup) { // Se si clicca sull'overlay
+        if (event.target === popup) { // If ypu click on the overlay
             popup.classList.remove("show");
         }
     };
