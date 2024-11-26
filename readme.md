@@ -40,6 +40,40 @@ If you want the Calendar to check for the month again just uncomment the month c
 
 In the `/scripts/messages.js` file are stored 24 Bible verses and 1 image as examples of how to insert text or image files in each door. 
 
+## Electron JS
+
+In this branch I'm trying to build a desktop app with electron JS. 
+
+To start the app, these are the steps to follow:
+
+### Install Node.js
+
+If it's not already installed on your computer, download Node.js.
+
+### Install Electron js
+
+Open the terminal and run:
+
+```powershell
+npm install electron
+```
+
+If you want to develop your own application based on this repo, run this command instead:
+
+```powershell
+npm install --save-dev electron
+```
+
+and compiled your `package.json` file.
+
+### Start the app
+
+To run the electron application, on the terminal run:
+
+```powershell
+npm run start
+```
+
 ## References
 
 - The project was inspired by this repository: http://azaleamollis.github.io/advent-calendar/ (I didn't know that you could fork on a repo so I wrote one myself, I'm sorryyyy 😭).
