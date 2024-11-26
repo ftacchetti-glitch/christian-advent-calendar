@@ -15,8 +15,14 @@ christian-advent-calendar/
 ├─ scripts/
 │  ├─ calendar.js
 │  ├─ messages.js
+│  ├─ preload.js
+│  ├─ renderer.js
 │  ├─ snow.js
+├─ .gitignore
 ├─ index.html
+├─ main.js
+├─ package-lock.json
+├─ package.json
 ├─ readme.md
 ├─ style.css
 ```
@@ -25,6 +31,8 @@ christian-advent-calendar/
 - `images` : folder used to store the background image, it can be used to organize possible images to show in calendar doors
 
 - `scripts`: it contains JS files used in the project, divided by task
+
+- `main.js`: this is the main file in which ElectronJS element are defined
 
 ## How to Test the Calendar before December?
 
