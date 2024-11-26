@@ -1,0 +1,23 @@
+{
+  "name": "christian-advent-calendar",
+  "version": "1.0.0",
+  "description": "An Advent Calendar with Bible verses in JS",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ftacchetti-glitch/christian-advent-calendar.git#desktop-app"
+  },
+  "author": "Fabiana Tacchetti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ftacchetti-glitch/christian-advent-calendar/issues"
+  },
+  "homepage": "https://github.com/ftacchetti-glitch/christian-advent-calendar/tree/desktop-app#readme",
+  "devDependencies": {
+    "electron": "^33.2.0"
+  }
+}
