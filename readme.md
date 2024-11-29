@@ -84,11 +84,9 @@ To run the electron application, on the terminal run:
 ```powershell
 npm run start
 ```
-## Using .exe file
 
-If you just want to use the application on Windows (x64) without building it, download `out.zip` and unzip it; then, run the .exe file `out/make/squirrel.windows/x64/christian-advent-calendar-1.0.0 Setup.exe` and the app will automatically open. 
+## How to create .exe file
 
-### How to create .exe file
 For the curious ones, I used javascript```electron-forge``` to build the package.
 
 Terminal commands:
@@ -99,6 +97,7 @@ npx electron-forge import
 npm run make
 ```
 
+After this, a folder named `out` will appear in your directory; now you can run the .exe file `out/make/squirrel.windows/x64/christian-advent-calendar-1.0.0 Setup.exe` and the app will automatically open.
 
 ## References
 
