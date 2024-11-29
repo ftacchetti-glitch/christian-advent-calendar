@@ -88,6 +88,18 @@ npm run start
 
 If you just want to use the application on Windows (x64) without building it, download `out.zip` and unzip it; then, run the .exe file `out/make/squirrel.windows/x64/christian-advent-calendar-1.0.0 Setup.exe` and the app will automatically open. 
 
+### How to create .exe file
+For the curious ones, I used javascript```electron-forge``` to build the package.
+
+Terminal commands:
+
+javascript```
+npm install --save-dev @electron-forge/cli
+npx electron-forge import
+npm run make
+```
+
+
 ## References
 
 - The project was inspired by this repository: http://azaleamollis.github.io/advent-calendar/ (I didn't know that you could fork on a repo so I wrote one myself, I'm sorryyyy 😭).
