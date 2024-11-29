@@ -9,14 +9,15 @@ This means that, by default, the whole Calendar is **inactive before and after D
 The folders are organized as follow:
 ```
 christian-advent-calendar/
+├─ electron-scripts/
+│  ├─ preload.js
+│  ├─ renderer.js
 ├─ favicon/
 ├─ images/
 │  ├─ NativityImage.jpg
 ├─ scripts/
 │  ├─ calendar.js
 │  ├─ messages.js
-│  ├─ preload.js
-│  ├─ renderer.js
 │  ├─ snow.js
 ├─ .gitignore
 ├─ index.html
@@ -32,7 +33,9 @@ christian-advent-calendar/
 
 - `scripts`: it contains JS files used in the project, divided by task
 
-- `main.js`: this is the main file in which ElectronJS element are defined
+- `main.js`: this is the main file in which ElectronJS elements are defined
+
+- `electron-scripts`: it contains JS files used to build the Electron app (their are now empty but can be used for customization, see [Preload Tutorial](https://www.electronjs.org/docs/latest/tutorial/tutorial-preload)).
 
 ## How to Test the Calendar before December?
 
@@ -81,6 +84,9 @@ To run the electron application, on the terminal run:
 ```powershell
 npm run start
 ```
+## Using .exe file
+
+If you just want to use the application on Windows (x64) without building it, download `out.zip` and unzip it; then, run the .exe file `out/make/squirrel.windows/x64/christian-advent-calendar-1.0.0 Setup.exe` and the app will automatically open. 
 
 ## References
 
