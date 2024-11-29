@@ -75,7 +75,7 @@ If you want to develop your own application based on this repo, run this command
 npm install --save-dev electron
 ```
 
-and compiled your `package.json` file.
+and compile your `package.json` file.
 
 ### Start the app
 
@@ -87,11 +87,11 @@ npm run start
 
 ## How to create .exe file
 
-For the curious ones, I used javascript```electron-forge``` to build the package.
+For the curious ones, I used ```electron-forge``` to build the package.
 
 Terminal commands:
 
-javascript```
+```javascript
 npm install --save-dev @electron-forge/cli
 npx electron-forge import
 npm run make
