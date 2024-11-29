@@ -11,7 +11,7 @@ const createWindow = () => {
 
         // this is a way to avoid the app interference with the local system
         webPreferences: {
-            preload: path.join(__dirname, "scripts/preload.js")
+            preload: path.join(__dirname, "electron-scripts/preload.js")
         }
     })
     
