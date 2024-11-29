@@ -9,6 +9,9 @@ This means that, by default, the whole Calendar is **inactive before and after D
 The folders are organized as follow:
 ```
 christian-advent-calendar/
+├─ electron-scripts/
+│  ├─ preload.js
+│  ├─ renderer.js
 ├─ favicon/
 ├─ images/
 │  ├─ NativityImage.jpg
@@ -16,7 +19,11 @@ christian-advent-calendar/
 │  ├─ calendar.js
 │  ├─ messages.js
 │  ├─ snow.js
+├─ .gitignore
 ├─ index.html
+├─ main.js
+├─ package-lock.json
+├─ package.json
 ├─ readme.md
 ├─ style.css
 ```
@@ -25,6 +32,10 @@ christian-advent-calendar/
 - `images` : folder used to store the background image, it can be used to organize possible images to show in calendar doors
 
 - `scripts`: it contains JS files used in the project, divided by task
+
+- `main.js`: this is the main file in which ElectronJS elements are defined
+
+- `electron-scripts`: it contains JS files used to build the Electron app (their are now empty but can be used for customization, see [Preload Tutorial](https://www.electronjs.org/docs/latest/tutorial/tutorial-preload)).
 
 ## How to Test the Calendar before December?
 
@@ -39,6 +50,55 @@ If you want the Calendar to check for the month again just uncomment the month c
 ## Popup messages
 
 In the `/scripts/messages.js` file are stored 24 Bible verses and 1 image as examples of how to insert text or image files in each door. 
+
+## Electron JS
+
+In this branch I'm trying to build a desktop app with electron JS. 
+
+To start the app, these are the steps to follow:
+
+### Install Node.js
+
+If it's not already installed on your computer, download Node.js.
+
+### Install Electron js
+
+Open the terminal and run:
+
+```powershell
+npm install electron
+```
+
+If you want to develop your own application based on this repo, run this command instead:
+
+```powershell
+npm install --save-dev electron
+```
+
+and compiled your `package.json` file.
+
+### Start the app
+
+To run the electron application, on the terminal run:
+
+```powershell
+npm run start
+```
+## Using .exe file
+
+If you just want to use the application on Windows (x64) without building it, download `out.zip` and unzip it; then, run the .exe file `out/make/squirrel.windows/x64/christian-advent-calendar-1.0.0 Setup.exe` and the app will automatically open. 
+
+### How to create .exe file
+For the curious ones, I used javascript```electron-forge``` to build the package.
+
+Terminal commands:
+
+javascript```
+npm install --save-dev @electron-forge/cli
+npx electron-forge import
+npm run make
+```
+
 
 ## References
 
